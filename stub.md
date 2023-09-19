@@ -28,3 +28,45 @@ temperature: 0
 Create a FormatJS function in React that can format numbers
 ```
 
+<details open id="d242c301d8b781637f6e2cfb14e0ebd6">
+<summary></summary>
+
+First, we need to install the `@formatjs/intl` package which provides the functionality to format numbers in React.
+
+DESCRIPTION: Installing the `@formatjs/intl` package using npm.
+
+```bash
+npm install @formatjs/intl
+```
+
+Next, we will create a new file `NumberFormatter.js` in the `src` directory and write a function that uses the `Intl.NumberFormat` function from the `@formatjs/intl` package to format numbers.
+
+DESCRIPTION: Creating a new file `src/NumberFormatter.js` and writing a function to format numbers.
+
+```jsx
+import React from 'react';
+import {IntlProvider, createIntl, createIntlCache} from '@formatjs/intl';
+
+// This is optional but highly recommended
+// since it prevents memory leak
+const cache = createIntlCache()
+
+const NumberFormatter = ({locale, number}) => {
+  const intl = createIntl({
+    locale: locale,
+    messages: {},
+  }, cache)
+
+  return (
+    <span>{intl.formatNumber(number)}</span>
+  );
+};
+
+export default NumberFormatter;
+```
+
+In this code, we are creating a new React component `NumberFormatter` that takes a `locale` and a `number` as props. The `locale` prop is used to determine the formatting style of the number. The `number` prop is the number that we want to format. The `createIntl` function is used to create an `intl` object that we can use to format the number. The formatted number is then rendered inside a `span` element.
+</details>
+
+
+
