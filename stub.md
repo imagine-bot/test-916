@@ -82,3 +82,39 @@ In this code, we are creating a new React component `NumberFormatter` that takes
 Add an example for European formatting in the app.jsx
 ```
 
+<details open id="f7dda2735f35cebffe51c2d401d9b262">
+<summary></summary>
+
+DESCRIPTION
+
+In this step, we are going to add an example of European formatting in the `app.jsx` file. This example will demonstrate how to format a date in the European style (day/month/year) using JavaScript's `toLocaleDateString` method.
+
+```jsx
+// app.jsx
+
+import React from 'react';
+
+class App extends React.Component {
+  render() {
+    // Create a new date object
+    const date = new Date();
+
+    // Format the date in European style (day/month/year)
+    const europeanDate = date.toLocaleDateString('en-GB');
+
+    return (
+      <div>
+        <h1>European Date Format Example</h1>
+        <p>Today's date in European format is: {europeanDate}</p>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+This code creates a new date object and formats it in the European style using the `toLocaleDateString` method with the 'en-GB' locale. The formatted date is then displayed in a paragraph element.
+</details>
+
+
+
