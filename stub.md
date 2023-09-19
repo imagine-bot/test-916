@@ -76,3 +76,30 @@ In this code, we are creating a new React component `NumberFormatter` that takes
 Show European formatting as the example
 ```
 
+<details open id="525309a4c412267c150254fd88e86997">
+<summary></summary>
+
+Sure, let's create a Python script that formats a number into the European format (i.e., using a comma as the decimal separator and a period as the thousands separator). We'll use the `locale` module in Python to achieve this. 
+
+The script will be saved as `euro_format.py` in the current directory.
+
+```python
+import locale
+
+# Set to European locale
+locale.setlocale(locale.LC_ALL, 'de_DE.utf8')
+
+def format_euro(num):
+    return locale.format_string("%d", num, grouping=True)
+
+# Test the function
+print(format_euro(1234567.89))
+```
+
+This script first sets the locale to 'de_DE.utf8', which is the locale for Germany (a European country). Then it defines a function `format_euro` that takes a number and returns it formatted in the European style. Finally, it tests the function by formatting the number 1234567.89.
+
+Please note that the available locales and their names depend on your system. 'de_DE.utf8' might not be available on all systems. If it's not available on your system, you need to install it or use a different locale that is available and uses the European number formatting style.
+</details>
+
+
+
