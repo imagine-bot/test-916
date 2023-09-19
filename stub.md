@@ -70,3 +70,9 @@ In this code, we are creating a new React component `NumberFormatter` that takes
 
 
 
+
+
+```stub
+Show European formatting as the example
+```
+
