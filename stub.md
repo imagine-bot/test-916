@@ -82,3 +82,9 @@ In this code, we are creating a new React component `NumberFormatter` that takes
 
 
 
+
+
+```stub
+Add an example of european formatting
+```
+
