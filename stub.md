@@ -76,3 +76,9 @@ In this code, we are creating a new React component `NumberFormatter` that takes
 
 
 
+
+
+```stub
+Add an example for European formatting in the app.jsx
+```
+
