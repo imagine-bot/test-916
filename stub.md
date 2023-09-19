@@ -88,3 +88,53 @@ In this code, we are creating a new React component `NumberFormatter` that takes
 Add an example of european formatting
 ```
 
+<details open id="2e7cfdeaccd527916e02ffe6da8a0b2c">
+<summary></summary>
+
+To demonstrate European formatting, let's create a Python script that formats a date in the European style (day/month/year) and a number in the European style (comma as decimal separator, period as thousands separator).
+
+First, we'll create a .env file to store our date and number for formatting.
+
+File: /path/to/your/app/.env
+
+```env
+DATE_TO_FORMAT=2022-12-31
+NUMBER_TO_FORMAT=1234567.89
+```
+
+Next, we'll create a Python script that reads these values from the .env file, formats them in the European style, and prints the results.
+
+File: /path/to/your/app/format_european.py
+
+```python
+import os
+from dotenv import load_dotenv
+from datetime import datetime
+import locale
+
+# Load environment variables
+load_dotenv()
+
+# Get date and number from environment variables
+date_to_format = os.getenv('DATE_TO_FORMAT')
+number_to_format = float(os.getenv('NUMBER_TO_FORMAT'))
+
+# Set locale to a European locale (e.g., French) to get European number formatting
+locale.setlocale(locale.LC_ALL, 'fr_FR.utf8')
+
+# Format date in European style (day/month/year)
+date = datetime.strptime(date_to_format, '%Y-%m-%d')
+formatted_date = date.strftime('%d/%m/%Y')
+
+# Format number in European style (comma as decimal separator, period as thousands separator)
+formatted_number = locale.format_string('%f', number_to_format, grouping=True)
+
+print(f'Formatted date: {formatted_date}')
+print(f'Formatted number: {formatted_number}')
+```
+
+This script uses the `datetime` module to format the date and the `locale` module to format the number. The `locale` module's `setlocale` function is used to set the locale to a European locale (in this case, French), which affects the way numbers are formatted by the `format_string` function.
+</details>
+
+
+
